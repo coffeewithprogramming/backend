@@ -9,7 +9,7 @@ router.post("/", async(req, res) => {
     res.status(201).json({ message: "Department added sucessfull" });
 });
 
-router.post("/l", async(req, res) => {
+router.get("/", async(req, res) => {
     const departments = await Department.find();
     res.status(200).json(departments);
 });
