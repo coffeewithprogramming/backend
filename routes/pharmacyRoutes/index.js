@@ -1,5 +1,5 @@
 import express from 'express';
-import Pharmacy from '../../db/model/phramacySChema';
+import Pharmacy from '../../db/model/phramacySChema.js';
 
 
 const router = express.Router();
