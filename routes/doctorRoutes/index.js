@@ -33,11 +33,14 @@ router.post("/login", async (req, res) => {
     if(!isMatching){
     return res.status(403).json({ message: "Username or Password incorrect" });
     }
-    const secret_key = 'dfnb984h2398fun3389er48rhfhd3h82398r4h2487^ghf474f872ubr363rg237rg243r7g24388gr7';
     
-    const token = jwt.sign({role :'DOCTOR',id :doctor._id},secret_key,{
-        expiresIn:'7d',
-    })
+        const token = jwt.sign(
+        { role: "DOCTOR", id: doctor._id },
+        process.env.USER_SECRET_KEYy,
+        {
+            expiresIn: "7d",
+        }
+    );
     return res.status(200).json({ message: "Login sucessfull" ,token :token});
     });
 

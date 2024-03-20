@@ -5,6 +5,7 @@ import imageRoutes from './imageRoutes/index.js'
 import userRoutes from './userRoutes/index.js'
 import pharmacyRoutes from './pharmacyRoutes/index.js'
 
+
 const router = express.Router();
 
 
