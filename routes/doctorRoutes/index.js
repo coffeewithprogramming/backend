@@ -44,6 +44,13 @@ router.post("/login", async (req, res) => {
     return res.status(200).json({ message: "Login sucessfull" ,token :token});
     });
 
+    // get doctor by id 
+
+    router.get('/profile/:id' ,async (req,res) =>{
+        const {id} = req.params;
+        const doctor =  await Doctor.findById(id).populate('department');
+        res.status(200).json(doctor);
+    })
 
 
 export default router;

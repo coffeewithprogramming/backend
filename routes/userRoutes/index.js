@@ -51,4 +51,13 @@ router.post("/signup", async (req, res) => {
     return res.status(200).json({ message: "Login sucessfull" ,token :token});
     });
 
+    
+    // get user by id
+
+    router.get('/profile/:id' , async (req,res) =>{
+        const {id} = req.params;
+        const user = await User.findById(id);
+        res.status(200).json(user);
+    })
+
     export default router;
